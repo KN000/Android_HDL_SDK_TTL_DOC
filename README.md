@@ -1,0 +1,2 @@
+# Android_HDL_SDK_TTL_DOC
+Android_HDL_SDK_TTL 接口说明文档
