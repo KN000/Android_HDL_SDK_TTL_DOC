@@ -1,0 +1,444 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>控制设备 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="api_control_light.html" />
+    
+    
+    <link rel="prev" href="api_search.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Integrated.html">
+            
+                <a href="Integrated.html">
+            
+                    
+                    集成SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="api_search.html">
+            
+                <a href="api_search.html">
+            
+                    
+                    搜索设备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="api_control.html">
+            
+                <a href="api_control.html">
+            
+                    
+                    控制设备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="api_control_light.html">
+            
+                <a href="api_control_light.html">
+            
+                    
+                    灯光类模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="api_control_curtain.html">
+            
+                <a href="api_control_curtain.html">
+            
+                    
+                    窗帘类模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="api_control_air.html">
+            
+                <a href="api_control_air.html">
+            
+                    
+                    空调类模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="api_control_music.html">
+            
+                <a href="api_control_music.html">
+            
+                    
+                    背景音乐功能类模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="api_control_security.html">
+            
+                <a href="api_control_security.html">
+            
+                    
+                    安防类模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="api_mcu_about.html">
+            
+                <a href="api_mcu_about.html">
+            
+                    
+                    MCU功能接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="api_mcu.html">
+            
+                <a href="api_mcu.html">
+            
+                    
+                    MCU通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="update_log.html">
+            
+                <a href="update_log.html">
+            
+                    
+                    更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >控制设备</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x63A7;&#x5236;&#x8BBE;&#x5907;">&#x63A7;&#x5236;&#x8BBE;&#x5907;</h1>
+<h3 id="&#x4E00;&#x3001;&#x63A7;&#x5236;&#x8BBE;&#x5907;">&#x4E00;&#x3001;&#x63A7;&#x5236;&#x8BBE;&#x5907;</h3>
+<p>SDK&#x6240;&#x6709;&#x7684;&#x8BBE;&#x5907;&#x548C;Mcu&#x63A7;&#x5236;&#x65B9;&#x6CD5;&#x5728;HDLCommand&#x7C7B;&#x4E2D;&#xFF0C;</p>
+<p>&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x91CC;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4F20;&#x5165;&#x5BF9;&#x5E94;&#x63A7;&#x5236;&#x8BBE;&#x5907;&#x7684;AppliancesInfo&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x6210;&#x529F;&#x53D1;&#x9001;&#x63A7;&#x5236;&#x6307;&#x4EE4;&#x3002;</p>
+<p><strong>&#x4EE3;&#x7801;&#x8303;&#x4F8B;</strong></p>
+<pre><code class="lang-java">    <span class="hljs-comment">//&#x53D1;&#x9001;&#x63A7;&#x5236;&#x706F;&#x5149;&#x6A21;&#x5757;&#x6307;&#x4EE4; </span>
+    <span class="hljs-comment">//appliancesInfo&#xFF1A;&#x4E3A;&#x9700;&#x8981;&#x63A7;&#x5236;&#x7684;&#x7684;&#x6A21;&#x5757;info&#x53C2;&#x6570;&#xFF0C;&#x91CC;&#x9762;&#x4FDD;&#x5B58;&#x4E86;&#x5F53;&#x524D;&#x56DE;&#x8DEF;&#x6A21;&#x5757;&#x7684;&#x6240;&#x6709;&#x53C2;&#x6570;&#x4FE1;&#x606F;</span>
+    <span class="hljs-comment">//lightState&#xFF1A;&#x63A7;&#x5236;&#x6539;&#x53D8;&#x7684;&#x4EAE;&#x5EA6;&#x503C; 0~100</span>
+    HDLCommand.lightCtrl(appliancesInfo, lightState);
+</code></pre>
+<h3 id="&#x4E8C;&#x3001;&#x8BBE;&#x5907;&#x7C7B;&#x578B;&#x8BF4;&#x660E;">&#x4E8C;&#x3001;&#x8BBE;&#x5907;&#x7C7B;&#x578B;&#x8BF4;&#x660E;</h3>
+<p>&#x901A;&#x8FC7;&#x83B7;&#x53D6;&#x8BBE;&#x5907;appliancesInfo&#x91CC;&#x9762;&#x7684;bigType&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x8DF3;&#x8F6C;&#x52A0;&#x8F7D;&#x5BF9;&#x5E94;&#x7684;&#x63A7;&#x5236;&#x9875;&#x9762;&#xFF0C;&#x5E76;&#x53D1;&#x9001;&#x5BF9;&#x5E94;&#x7684;&#x63A7;&#x5236;&#x547D;&#x4EE4;&#x3002;</p>
+<p>&#x6BCF;&#x4E2A;bigType&#x5927;&#x7C7B;&#x533A;&#x5206;&#x54EA;&#x4E2A;&#x5927;&#x7C7B;&#x6A21;&#x5757;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x518D;&#x6839;&#x636E;DeviceType&#x8BBE;&#x5907;&#x7C7B;&#x578B;&#x6765;&#x7EC6;&#x5206;&#x5177;&#x4F53;&#x662F;&#x54EA;&#x79CD;&#x8BBE;&#x5907;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x8303;&#x4F8B;HVAC&#x7A7A;&#x8C03;&#x6A21;&#x5757;&#x3002;</p>
+<p><strong>&#x4EE3;&#x7801;&#x8303;&#x4F8B;</strong></p>
+<pre><code class="lang-java"><span class="hljs-keyword">switch</span> (bigType) {
+    <span class="hljs-keyword">case</span> Configuration.LIGTH_BIG_TYPE:
+        <span class="hljs-comment">//&#x706F;&#x5149;&#x6A21;&#x5757;</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> Configuration.CURTAIN_BIG_TYPE:
+        <span class="hljs-comment">//&#x7A97;&#x5E18;&#x6A21;&#x5757;</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> Configuration.AIR_BIG_TYPE:
+        <span class="hljs-comment">//&#x7A7A;&#x8C03;&#x6A21;&#x5757;</span>
+        <span class="hljs-keyword">if</span>(appliancesInfos.get(position).getDeviceType() == HDLApConfig.TYPE_AC_HVAC){
+            <span class="hljs-comment">//HDLApConfig.TYPE_AC_HVAC&#x4E3A;HVAC&#x7A7A;&#x8C03;&#x6A21;&#x5757;</span>
+        }<span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">//&#x5176;&#x4ED6;&#x7A7A;&#x8C03;&#x6A21;&#x5757;    </span>
+        }
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> Configuration.LOGIC_BIG_TYPE:
+        <span class="hljs-comment">//&#x903B;&#x8F91;&#x6A21;&#x5757;</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> Configuration.AUDIO_BIG_TYPE:
+        <span class="hljs-comment">//&#x97F3;&#x4E50;&#x6A21;&#x5757;</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> Configuration.SECURITY_BIG_TYPE:
+        <span class="hljs-comment">//&#x5B89;&#x9632;&#x6A21;&#x5757;</span>
+        <span class="hljs-keyword">break</span>;
+
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">break</span>;
+}
+</code></pre>
+<h3 id="&#x4E09;&#x3001;appliancesinfo&#x7C7B;&#x8BF4;&#x660E;">&#x4E09;&#x3001;AppliancesInfo&#x7C7B;&#x8BF4;&#x660E;</h3>
+<p><strong>&#x7C7B;&#x63CF;&#x8FF0;</strong></p>
+<p>AppliancesInfo&#x7C7B;&#x662F;SDK&#x641C;&#x7D22;&#x6216;&#x8005;&#x624B;&#x673A;&#x6DFB;&#x52A0;&#x8BBE;&#x5907;&#x540E;&#xFF0C;&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x56DE;&#x8DEF;&#x6A21;&#x5757;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#x3002;</p>
+<p><strong>&#x7C7B;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x4EE3;&#x7801;&#x8303;&#x4F8B;</strong></p>
+<pre><code class="lang-java">    .......
+    <span class="hljs-keyword">private</span> String deviceName;<span class="hljs-comment">//&#x8BBE;&#x5907;&#x540D;&#x79F0;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> bigType;<span class="hljs-comment">//&#x5927;&#x7C7B;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> littleType;<span class="hljs-comment">//&#x5C0F;&#x7C7B;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> channelNum;<span class="hljs-comment">//&#x56DE;&#x8DEF;&#x53F7;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> deviceSubnetID;<span class="hljs-comment">//&#x8BBE;&#x5907;&#x5B50;&#x7F51;&#x53F7;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> deviceDeviceID;<span class="hljs-comment">//&#x8BBE;&#x5907;&#x53F7;</span>
+    <span class="hljs-keyword">private</span> String remarks;<span class="hljs-comment">//&#x5907;&#x6CE8;</span>
+    <span class="hljs-keyword">private</span> String parentRemarks;<span class="hljs-comment">//&#x6A21;&#x5757;&#x5907;&#x6CE8;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> deviceType;<span class="hljs-comment">//&#x8BBE;&#x5907;&#x7C7B;&#x578B;</span>
+    .......
+</code></pre>
+<p>&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x4F1A;&#x6709;&#x81EA;&#x5DF1;&#x7684; &#x5927;&#x7C7B;&#x3001;&#x5C0F;&#x7C7B;&#x3001;&#x5B50;&#x7F51;&#x53F7;&#x3001;&#x8BBE;&#x5907;&#x53F7;&#x3001;&#x56DE;&#x8DEF;&#x53F7;&#x3001;&#x8BBE;&#x5907;&#x7C7B;&#x578B;&#x3001;&#x5907;&#x6CE8;&#x7B49;&#x53C2;&#x6570;&#xFF0C;&#x6839;&#x636E;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x51FA;&#x8BE5;&#x8BBE;&#x5907;&#x662F;&#x54EA;&#x7C7B;&#x8BBE;&#x5907;&#xFF0C;&#x5728;&#x54EA;&#x4E2A;&#x5B50;&#x7F51;&#x53F7;&#x3001;&#x8BBE;&#x5907;&#x53F7;&#x3001;&#x4EE5;&#x53CA;&#x56DE;&#x8DEF;&#x53F7;&#x4E0B;&#x9762;&#xFF0C;&#x7528;&#x4E8E;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x56DE;&#x8DEF;&#x8BBE;&#x5907;&#x3002;&#x540E;&#x9762;&#x5BF9;&#x8BBE;&#x5907;&#x63A7;&#x5236;&#x83B7;&#x53D6;&#x72B6;&#x6001;&#xFF0C;&#x76D1;&#x542C;&#x56DE;&#x590D;&#x90FD;&#x9700;&#x8981;&#x7528;&#x5230;&#x91CC;&#x9762;&#x7684;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="api_search.html" class="navigation navigation-prev " aria-label="Previous page: 搜索设备">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="api_control_light.html" class="navigation navigation-next " aria-label="Next page: 灯光类模块">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"控制设备","level":"1.4","depth":1,"next":{"title":"灯光类模块","level":"1.4.1","depth":2,"path":"src/api_control_light.md","ref":"./src/api_control_light.md","articles":[]},"previous":{"title":"搜索设备","level":"1.3","depth":1,"path":"src/api_search.md","ref":"./src/api_search.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":">=2.0.0"},"file":{"path":"src/api_control.md","mtime":"2019-08-16T05:56:00.617Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-19T03:08:03.824Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
