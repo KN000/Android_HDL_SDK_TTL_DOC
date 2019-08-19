@@ -167,11 +167,13 @@ state：需要控制功能对应的状态值
 
 ### 三、通用空调面板查询状态
 
+**HDLCommand.getDeviceStateFromLocal(AppliancesInfo info)**
+
 **接口描述**
 
-通用空调面板不支持查询状态，
+通用空调面板不支持在线请求查询状态，只能查询获取SDK保存本地的状态；
 
-注：通用空调面板空调DeviceType设备类型为HDLApConfig.TYPE_AC_PANEL。
+调用HDLCommand.getDeviceStateFromLocal(appliancesInfo)接口即可。
 
 
 **状态改变回调事件监听**
@@ -184,7 +186,15 @@ state：需要控制功能对应的状态值
 
 **代码范例**
 
+注：通用空调面板空调DeviceType设备类型为HDLApConfig.TYPE_AC_PANEL。
+
 ```java
+
+    .......
+    //从本地获取空调面板状态
+    HDLCommand.getDeviceStateFromLocal(appliancesInfo);
+    .......
+
 
     /**
      * 获取单一设备状态回调Event
