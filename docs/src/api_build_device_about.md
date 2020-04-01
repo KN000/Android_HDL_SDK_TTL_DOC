@@ -56,7 +56,28 @@
         }
 
 
+```
 
+添加成功后同样会收到DevicesInfoEvent订阅事件，可以通过event.getDesDataList() 来获取生成好的数据。或者直接通过HDLDeviceManager.devicesDataList获取
+
+**代码范例**
+
+```java
+    /**
+     * ====================EventBus 订阅事件 ====================
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onDevicesInfoEventMain(DevicesInfoEvent event) {
+        mAllDevicesList.clear();
+        mProgressDialog.dismiss();
+        if (!event.isSuccess()) {
+            Toast.makeText(MainActivity.this, "搜索超时，请重新再试", Toast.LENGTH_SHORT).show();
+            tvResult.setText("搜索超时，请重新再试");
+            return;
+        }
+        mDevicesDataList = event.getDesDataList();
+        updateDeviceListView();
+    }
 
 ```
 
@@ -84,6 +105,8 @@
 
 
 ```
+
+添加成功后同样会收到DevicesInfoEvent订阅事件
 
 ### 三、初始化设备列表
 
