@@ -1,5 +1,9 @@
 # MCU通信
-
+  <!-- * [读配置信息](./src/Integrated.md)
+  * [写配置信息](./src/Integrated.md)
+  * [申请升级](./src/Integrated.md)
+  * [重启MCU](./src/Integrated.md)
+  * [检测丢包状态](./src/Integrated.md) -->
 
 ### MCU控制统一回调
 
@@ -53,9 +57,9 @@ MCU的所有请求回调，超时、出错或成功都会统一收到MCUFeedBack
 
 ### 一、读配置参数
 
-**HDLCommand.mcuReadConfiguration()**
-
 **接口描述**
+
+HDLCommand.mcuReadConfiguration()
 
 调用该接口，可以读取MCU的配置参数，协议类型、波特率、数据位、校验位和停止位 。
 
@@ -103,9 +107,9 @@ MCU的配置参数：协议类型、波特率、数据位、校验位和停止�
 
 ### 二、写配置参数
 
-**HDLCommand.mcuWriteConfiguration(byte[] sendBytes)**
-
 **接口描述**
+
+HDLCommand.mcuWriteConfiguration(byte[] sendBytes)
 
 调用该接口，可以修改MCU的配置参数，协议类型、波特率、数据位、校验位和停止位 。
 
@@ -162,9 +166,9 @@ MCU的配置参数：协议类型、波特率、数据位、校验位和停止�
 
 ### 三、MCU重启
 
-**HDLCommand.mcuSendRestart()**
-
 **接口描述**
+
+HDLCommand.mcuSendRestart()
 
 调用该接口，可以让MCU重启。
 
@@ -213,9 +217,9 @@ MCU重启回调
 
 ### 四、升级MCU固件
 
-**HDLCommand.mcuRequestUpgradeWithFile(byte[] upgradeFileDatas)**
-
 **接口描述**
+
+HDLCommand.mcuRequestUpgradeWithFile(byte[] upgradeFileDatas)
 
 调用该接口，可以升级MCU固件。
 
@@ -333,9 +337,9 @@ MCU重启回调
 
 ### 五、发送透传数据
 
-**HDLCommand.mcuSendTransparentData(byte[] sendBytes)**
-
 **接口描述**
+
+HDLCommand.mcuSendTransparentData(byte[] sendBytes)
 
 调用该接口，可以发送透传数据，不走bus协议，直接转发，不做数据格式处理。
 
@@ -386,9 +390,9 @@ MCU重启回调
 
 ### 六、开启和关闭透传数据
 
-**HDLCommand.setHDLPassThroughOpen(boolean bOpen)**
-
 **接口描述**
+
+HDLCommand.setHDLPassThroughOpen(boolean bOpen)
 
 调用该接口，可以开启和关闭透传数据，关闭数据透传默认走bus协议；其他协议下，开发者可以打开数据透传，自己自定义收发数据。
 

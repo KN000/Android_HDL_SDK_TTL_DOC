@@ -9,9 +9,9 @@
 
 ### 一、查询状态
 
-**HDLCommand.getLightDeviceStateFromNetwork(AppliancesInfo info)**
-
 **接口描述**
+
+HDLCommand.getLightDeviceStateFromNetwork(AppliancesInfo info)
 
 调用该接口，可以查询当前灯光设备的亮度状态信息。
 
@@ -71,9 +71,11 @@
 
 ### 二、控制改变状态
 
-**HDLCommand.lightCtrl(AppliancesInfo info, int state)**
-
 **接口描述**
+
+HDLCommand.lightCtrl(AppliancesInfo info, int state)
+
+state：范围0~100
 
 调用该接口，可以控制改变灯光模块的，开关状态和亮度值。
 

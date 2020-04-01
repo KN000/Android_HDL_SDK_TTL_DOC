@@ -1,6 +1,6 @@
 
 <!DOCTYPE HTML>
-<html lang="zh-hans" >
+<html lang="" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -71,7 +71,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="输入并搜索" />
+    <input type="text" placeholder="Type to search" />
 </div>
 
             
@@ -207,6 +207,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.6" data-path="api_control_scenes.html">
+            
+                <a href="api_control_scenes.html">
+            
+                    
+                    场景控制（逻辑模块）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="api_control_switch.html">
+            
+                <a href="api_control_switch.html">
+            
+                    
+                    通用开关模块
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -244,7 +270,39 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="update_log.html">
+        <li class="chapter " data-level="1.6" data-path="api_build_device.html">
+            
+                <a href="api_build_device.html">
+            
+                    
+                    非搜索设备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="api_build_device_about.html">
+            
+                <a href="api_build_device_about.html">
+            
+                    
+                    生成目标设备数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="update_log.html">
             
                 <a href="update_log.html">
             
@@ -264,7 +322,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            本书使用 GitBook 发布
+            Published with GitBook
         </a>
     </li>
 </ul>
@@ -309,8 +367,8 @@
 &#x6DF7;&#x5408;&#x8C03;&#x5149;&#x7C7B;&#xFF08;09&#xFF09;
 &#x6DF7;&#x5408;&#x5F00;&#x5173;&#x7C7B;&#xFF08;10&#xFF09;</p>
 <h3 id="&#x4E00;&#x3001;&#x67E5;&#x8BE2;&#x72B6;&#x6001;">&#x4E00;&#x3001;&#x67E5;&#x8BE2;&#x72B6;&#x6001;</h3>
-<p><strong>HDLCommand.getLightDeviceStateFromNetwork(AppliancesInfo info)</strong></p>
 <p><strong>&#x63A5;&#x53E3;&#x63CF;&#x8FF0;</strong></p>
+<p>HDLCommand.getLightDeviceStateFromNetwork(AppliancesInfo info)</p>
 <p>&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x5F53;&#x524D;&#x706F;&#x5149;&#x8BBE;&#x5907;&#x7684;&#x4EAE;&#x5EA6;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#x3002;</p>
 <p><strong>&#x4EE3;&#x7801;&#x8303;&#x4F8B;</strong></p>
 <pre><code class="lang-java">    <span class="hljs-comment">//&#x8BF7;&#x6C42;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x706F;&#x5149;&#x6A21;&#x5757;&#x72B6;&#x6001;&#x4FE1;&#x606F;</span>
@@ -356,8 +414,9 @@
     }
 </code></pre>
 <h3 id="&#x4E8C;&#x3001;&#x63A7;&#x5236;&#x6539;&#x53D8;&#x72B6;&#x6001;">&#x4E8C;&#x3001;&#x63A7;&#x5236;&#x6539;&#x53D8;&#x72B6;&#x6001;</h3>
-<p><strong>HDLCommand.lightCtrl(AppliancesInfo info, int state)</strong></p>
 <p><strong>&#x63A5;&#x53E3;&#x63CF;&#x8FF0;</strong></p>
+<p>HDLCommand.lightCtrl(AppliancesInfo info, int state)</p>
+<p>state&#xFF1A;&#x8303;&#x56F4;0~100</p>
 <p>&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x6539;&#x53D8;&#x706F;&#x5149;&#x6A21;&#x5757;&#x7684;&#xFF0C;&#x5F00;&#x5173;&#x72B6;&#x6001;&#x548C;&#x4EAE;&#x5EA6;&#x503C;&#x3002;</p>
 <p><strong>&#x4EE3;&#x7801;&#x8303;&#x4F8B;</strong></p>
 <pre><code class="lang-java">    <span class="hljs-comment">//&#x53D1;&#x9001;&#x63A7;&#x5236;&#x706F;&#x5149;&#x6A21;&#x5757;&#x6307;&#x4EE4; </span>
@@ -445,7 +504,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"灯光类模块","level":"1.4.1","depth":2,"next":{"title":"窗帘类模块","level":"1.4.2","depth":2,"path":"src/api_control_curtain.md","ref":"./src/api_control_curtain.md","articles":[]},"previous":{"title":"控制设备","level":"1.4","depth":1,"path":"src/api_control.md","ref":"./src/api_control.md","articles":[{"title":"灯光类模块","level":"1.4.1","depth":2,"path":"src/api_control_light.md","ref":"./src/api_control_light.md","articles":[]},{"title":"窗帘类模块","level":"1.4.2","depth":2,"path":"src/api_control_curtain.md","ref":"./src/api_control_curtain.md","articles":[]},{"title":"空调类模块","level":"1.4.3","depth":2,"path":"src/api_control_air.md","ref":"./src/api_control_air.md","articles":[]},{"title":"背景音乐功能类模块","level":"1.4.4","depth":2,"path":"src/api_control_music.md","ref":"./src/api_control_music.md","articles":[]},{"title":"安防类模块","level":"1.4.5","depth":2,"path":"src/api_control_security.md","ref":"./src/api_control_security.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":">=2.0.0"},"file":{"path":"src/api_control_light.md","mtime":"2019-08-19T02:39:05.472Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-19T08:59:05.262Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"灯光类模块","level":"1.4.1","depth":2,"next":{"title":"窗帘类模块","level":"1.4.2","depth":2,"path":"src/api_control_curtain.md","ref":"./src/api_control_curtain.md","articles":[]},"previous":{"title":"控制设备","level":"1.4","depth":1,"path":"src/api_control.md","ref":"./src/api_control.md","articles":[{"title":"灯光类模块","level":"1.4.1","depth":2,"path":"src/api_control_light.md","ref":"./src/api_control_light.md","articles":[]},{"title":"窗帘类模块","level":"1.4.2","depth":2,"path":"src/api_control_curtain.md","ref":"./src/api_control_curtain.md","articles":[]},{"title":"空调类模块","level":"1.4.3","depth":2,"path":"src/api_control_air.md","ref":"./src/api_control_air.md","articles":[]},{"title":"背景音乐功能类模块","level":"1.4.4","depth":2,"path":"src/api_control_music.md","ref":"./src/api_control_music.md","articles":[]},{"title":"安防类模块","level":"1.4.5","depth":2,"path":"src/api_control_security.md","ref":"./src/api_control_security.md","articles":[]},{"title":"场景控制（逻辑模块）","level":"1.4.6","depth":2,"path":"src/api_control_scenes.md","ref":"./src/api_control_scenes.md","articles":[]},{"title":"通用开关模块","level":"1.4.7","depth":2,"path":"src/api_control_switch.md","ref":"./src/api_control_switch.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/api_control_light.md","mtime":"2019-08-16T08:50:42.124Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-01T09:07:10.806Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

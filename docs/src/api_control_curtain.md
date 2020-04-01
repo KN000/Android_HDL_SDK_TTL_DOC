@@ -8,9 +8,9 @@
 
 ### 一、查询状态
 
-**HDLCommand.getCurtainDeviceStateFromNetwork(AppliancesInfo info)**
-
 **接口描述**
+
+HDLCommand.getCurtainDeviceStateFromNetwork(AppliancesInfo info)
 
 调用该接口，可以查询当前窗帘类设备的开关状态信息。
 
@@ -106,9 +106,9 @@ HDLApConfig.TYPE_CURTAIN_ROLLER 为卷帘电机，该类型模块，返回状态
 
 ### 二、控制改变状态
 
-**HDLCommand.curtainCtrl(AppliancesInfo info, int state)**
-
 **接口描述**
+
+HDLCommand.curtainCtrl(AppliancesInfo info, int state)
 
 调用该接口，可以控制改变窗帘类模块的，打开、关闭、停止和打开百分比（窗帘模块不能控制百分百，开合帘电机、卷帘电机才能）。
 

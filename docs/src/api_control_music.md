@@ -7,9 +7,9 @@
 
 ### 一、背景音乐控制
 
-**HDLCommand.audioCtrl(AppliancesInfo info, int type)**
-
 **接口描述**
+
+HDLCommand.audioCtrl(AppliancesInfo info, int type)
 
 info：需要控制设备的参数
 
@@ -57,9 +57,10 @@ type：需要控制功能命令参数
 ```
 
 
-**HDLCommand.audioCtrl(AppliancesInfo info, int type, int value)**
 
 **接口描述**
+
+HDLCommand.audioCtrl(AppliancesInfo info, int type, int value)
 
 调用该接口，可以控制背景音乐模块，获取当前播放列表、控制设备音量。
 
@@ -77,11 +78,9 @@ type：需要控制功能命令参数
     .......
 ```
 
-
-
-**HDLCommand.audioCtrl(AppliancesInfo info, int type, int listId, int songId)**
-
 **接口描述**
+
+HDLCommand.audioCtrl(AppliancesInfo info, int type, int listId, int songId)
 
 listId：当前列表号
 
@@ -97,6 +96,7 @@ songId：要播放的列表中歌曲对应的歌曲ID
     HDLCommand.audioCtrl(appliancesInfo, HDLAudio.SET_CHOOSE_PLAY_SONG, curListNum, position);
     .......
 ```
+
 
 
 
@@ -211,12 +211,3 @@ songId：要播放的列表中歌曲对应的歌曲ID
     }
 
 ```
-
-**注：HDLAudio.CALLBACK_CURRENT_SONG_INFO**
-
-```java
-HDLLog.Log("当前歌曲总时长：" + songInfo[0] + "秒 ，当前歌曲已播放时长：" + songInfo[1] + "秒， 当前歌曲状态：" + curStatus);
-```
-
-这里虽然可以获取，当前歌曲已播放时长，但APP上音乐播放进度条，不能根据这里的播放时长显示播放进度，因为有的音乐面板不会主动发送当前播放时长，所以开发者应自己创建一个定时器，定时更新播放时长时间值和进度条。
-

@@ -7,9 +7,9 @@
 
 ### 一、查询布防状态
 
-**HDLCommand.getSecurityStateFromNetwork(AppliancesInfo info)**
-
 **接口描述**
+
+HDLCommand.getSecurityStateFromNetwork(AppliancesInfo info)
 
 调用该接口，可以查询当前安防的布防状态信息。
 
@@ -82,9 +82,9 @@
 
 ### 二、控制改变状态
 
-**HDLCommand.securityArmingCtrl(AppliancesInfo info, int state)**
-
 **接口描述**
+
+HDLCommand.securityArmingCtrl(AppliancesInfo info, int state)
 
 调用该接口，修改安防模块的布防状态。
 
@@ -108,7 +108,7 @@
 **代码范例**
 ```java
 
- /**
+    /**
      * 布防设置回调Event
      *
      * @param event

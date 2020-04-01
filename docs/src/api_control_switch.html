@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>安防类模块 · GitBook</title>
+        <title>通用开关模块 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="api_control_scenes.html" />
+    <link rel="next" href="api_mcu_about.html" />
     
     
-    <link rel="prev" href="api_control_music.html" />
+    <link rel="prev" href="api_control_scenes.html" />
     
 
     </head>
@@ -194,7 +194,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.5" data-path="api_control_security.html">
+        <li class="chapter " data-level="1.4.5" data-path="api_control_security.html">
             
                 <a href="api_control_security.html">
             
@@ -220,7 +220,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.7" data-path="api_control_switch.html">
+        <li class="chapter active" data-level="1.4.7" data-path="api_control_switch.html">
             
                 <a href="api_control_switch.html">
             
@@ -345,7 +345,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >安防类模块</a>
+        <a href=".." >通用开关模块</a>
     </h1>
 </div>
 
@@ -360,111 +360,90 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5B89;&#x9632;&#x7C7B;&#x6A21;&#x5757;">&#x5B89;&#x9632;&#x7C7B;&#x6A21;&#x5757;</h1>
-<p><strong>&#x5B89;&#x9632;&#x7C7B;&#x6A21;&#x5757;&#x652F;&#x6301;&#x641C;&#x7D22;&#x548C;&#x63A7;&#x5236;&#x7684;&#x7C7B;&#x578B;</strong></p>
-<p>&#x5B89;&#x9632;&#x6A21;&#x5757;&#xFF08;0&#xFF09; </p>
-<h3 id="&#x4E00;&#x3001;&#x67E5;&#x8BE2;&#x5E03;&#x9632;&#x72B6;&#x6001;">&#x4E00;&#x3001;&#x67E5;&#x8BE2;&#x5E03;&#x9632;&#x72B6;&#x6001;</h3>
+                                <h1 id="&#x901A;&#x7528;&#x5F00;&#x5173;&#x6A21;&#x5757;">&#x901A;&#x7528;&#x5F00;&#x5173;&#x6A21;&#x5757;</h1>
+<p><strong>&#x901A;&#x7528;&#x5F00;&#x5173;&#x6A21;&#x5757;&#x7684;&#x7C7B;&#x578B;</strong></p>
+<p>&#x901A;&#x7528;&#x5F00;&#x5173;&#xFF08;00&#xFF09;</p>
+<h3 id="&#x4E00;&#x3001;&#x67E5;&#x8BE2;&#x72B6;&#x6001;">&#x4E00;&#x3001;&#x67E5;&#x8BE2;&#x72B6;&#x6001;</h3>
 <p><strong>&#x63A5;&#x53E3;&#x63CF;&#x8FF0;</strong></p>
-<p>HDLCommand.getSecurityStateFromNetwork(AppliancesInfo info)</p>
-<p>&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x5F53;&#x524D;&#x5B89;&#x9632;&#x7684;&#x5E03;&#x9632;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#x3002;</p>
+<p>HDLCommand.getCommonSwitchStateFromNetwork(AppliancesInfo info)</p>
+<p>&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x5F53;&#x524D;&#x901A;&#x7528;&#x5F00;&#x5173;&#x8BBE;&#x5907;&#x7684;&#x5F00;&#x5173;&#x72B6;&#x6001;&#x3002;</p>
 <p><strong>&#x4EE3;&#x7801;&#x8303;&#x4F8B;</strong></p>
-<pre><code class="lang-java">    <span class="hljs-comment">//&#x8BF7;&#x6C42;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x5B89;&#x9632;&#x6A21;&#x5757;&#x5E03;&#x9632;&#x72B6;&#x6001;&#x4FE1;&#x606F;</span>
-    HDLCommand.getSecurityStateFromNetwork(appliancesInfo);
+<pre><code class="lang-java">    <span class="hljs-comment">//&#x8BF7;&#x6C42;&#x83B7;&#x53D6;&#x901A;&#x7528;&#x5F00;&#x5173;&#x72B6;&#x6001;&#x4FE1;&#x606F;</span>
+    HDLCommand.getCommonSwitchStateFromNetwork(appliancesInfo);
 </code></pre>
 <p><strong>&#x67E5;&#x8BE2;&#x72B6;&#x6001;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;</strong></p>
-<p>&#x67E5;&#x8BE2;&#x72B6;&#x6001;&#x8D85;&#x65F6;&#x6216;&#x6210;&#x529F;&#xFF0C;&#x90FD;&#x4F1A;&#x6536;&#x5230;DeviceStateEvent&#x8BA2;&#x9605;&#x4E8B;&#x4EF6;&#xFF0C;SDK&#x6240;&#x6709;&#x72B6;&#x6001;&#x56DE;&#x8C03;&#x90FD;&#x7EDF;&#x4E00;&#x7528;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#x679C;event.isSuccess()&#x503C;&#x4E3A;false&#xFF0C;&#x5219;&#x4EE3;&#x8868;&#x67E5;&#x8BE2;&#x8D85;&#x65F6;&#xFF0C;&#x6CA1;&#x6536;&#x5230;&#x8BBE;&#x5907;&#x56DE;&#x590D;&#xFF1B;</p>
+<p>&#x67E5;&#x8BE2;&#x72B6;&#x6001;&#x8D85;&#x65F6;&#x6216;&#x6210;&#x529F;&#xFF0C;&#x90FD;&#x4F1A;&#x6536;&#x5230;onCommonSwitchStateEventMain&#x8BA2;&#x9605;&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#x679C;event.isSuccess()&#x503C;&#x4E3A;false&#xFF0C;&#x5219;&#x4EE3;&#x8868;&#x67E5;&#x8BE2;&#x8D85;&#x65F6;&#xFF0C;&#x6CA1;&#x6536;&#x5230;&#x8BBE;&#x5907;&#x56DE;&#x590D;&#xFF1B;</p>
 <p>&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5728;&#x6240;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x72B6;&#x6001;&#x56DE;&#x8C03;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x8BA2;&#x9605;&#x8BE5;&#x4E8B;&#x4EF6;&#xFF1B;
 &#x5E76;&#x901A;&#x8FC7;&#x6BD4;&#x8F83;&#x524D;&#x8BBE;&#x5907;&#x548C;&#x56DE;&#x8C03;&#x72B6;&#x6001;&#x8BBE;&#x5907;&#x7684;&#x5B50;&#x7F51;&#x53F7;&#xFF08;getDeviceSubnetID&#xFF09;&#x3001;&#x8BBE;&#x5907;&#x53F7;&#xFF08;getDeviceDeviceID&#xFF09;&#x3001;AppliancesInfo&#x91CC;&#x9762;&#x7684;&#x8BBE;&#x5907;&#x7C7B;&#x578B;&#xFF08;getDeviceType&#xFF09;&#x548C;&#x56DE;&#x8DEF;&#x53F7;&#xFF08;getChannelNum&#xFF09;&#x662F;&#x5426;&#x4E00;&#x81F4;&#xFF0C;&#x4ECE;&#x800C;&#x5224;&#x65AD;&#x8BE5;&#x6D88;&#x606F;&#x4E8B;&#x4EF6;&#x4E3A;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x67E5;&#x8BE2;&#x72B6;&#x6001;&#x8FD4;&#x56DE;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x8FDB;&#x884C;&#x4E0B;&#x4E00;&#x6B65;&#x5904;&#x7406;&#xFF0C;&#x4E0D;&#x4E00;&#x81F4;&#x5219;&#x8FC7;&#x6EE4;&#x4E0D;&#x5904;&#x7406;&#x3002;</p>
 <p><strong>&#x4EE3;&#x7801;&#x8303;&#x4F8B;</strong></p>
-<pre><code class="lang-java">     <span class="hljs-comment">/**
-     * &#x67E5;&#x8BE2;&#x5E03;&#x9632;&#x72B6;&#x6001; &#x56DE;&#x8C03;Event
+<pre><code class="lang-java">    <span class="hljs-comment">/**
+     * &#x901A;&#x7528;&#x5F00;&#x5173;&#x72B6;&#x6001; &#x56DE;&#x590D;&#x56DE;&#x8C03;Event
      *
      * <span class="hljs-doctag">@param</span> event
      */</span>
     <span class="hljs-meta">@Subscribe</span>(threadMode = ThreadMode.MAIN)
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onDeviceStateEventMain</span><span class="hljs-params">(DeviceStateEvent event)</span> </span>{
-
-        <span class="hljs-keyword">if</span> (event.getAppliancesInfo().getDeviceSubnetID() == appliancesInfo.getDeviceSubnetID()
-                &amp;&amp; event.getAppliancesInfo().getDeviceDeviceID() == appliancesInfo.getDeviceDeviceID()
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCommonSwitchStateEventMain</span><span class="hljs-params">(CommonSwitchStateBackEvent event)</span> </span>{
+        <span class="hljs-keyword">if</span> (event.getCommonSwitchBackInfo().getAppliancesInfo().getDeviceDeviceID() == appliancesInfo.getDeviceDeviceID()
+                &amp;&amp; event.getCommonSwitchBackInfo().getAppliancesInfo().getDeviceSubnetID() == appliancesInfo.getDeviceSubnetID()
+                &amp;&amp; event.getCommonSwitchBackInfo().getAppliancesInfo().getChannelNum() == appliancesInfo.getChannelNum()
         ) {
-            <span class="hljs-comment">//&#x8FD9;&#x4E2A;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x7684;</span>
-            <span class="hljs-keyword">switch</span> (event.getAppliancesInfo().getDeviceType()) {
-                <span class="hljs-keyword">case</span> HDLApConfig.TYPE_SECURITY_MODULE:
-                    <span class="hljs-keyword">if</span> (appliancesInfo.getChannelNum() == event.getAppliancesInfo().getChannelNum()) {
-                        <span class="hljs-keyword">if</span> (!event.isSuccess()) {
-                            tv_mesSetText(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x5E03;&#x9632;&#x72B6;&#x6001;&#x5931;&#x8D25;&#xFF0C;&#x8BF7;&#x91CD;&#x65B0;&#x518D;&#x8BD5;&quot;</span>);
-                            <span class="hljs-keyword">return</span>;
-                        }
-
-                        SecurityArmingStateBackInfo mSecurityArmingStateBackInfo = <span class="hljs-keyword">new</span> SecurityArmingStateBackInfo(event.getAppliancesInfo().getArrCurState());
-                        <span class="hljs-keyword">if</span> (mSecurityArmingStateBackInfo == <span class="hljs-keyword">null</span>) {
-                            tv_mesSetText(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x5E03;&#x9632;&#x72B6;&#x6001;&#x5931;&#x8D25;&#xFF0C;&#x8BF7;&#x91CD;&#x65B0;&#x518D;&#x8BD5;&quot;</span>);
-                            <span class="hljs-keyword">return</span>;
-                        }
-
-                        <span class="hljs-keyword">int</span> armingStateBack = mSecurityArmingStateBackInfo.getArmingState();
-                        <span class="hljs-keyword">if</span> (armingStateBack == <span class="hljs-number">0</span>) {   <span class="hljs-comment">//&#x8BFB;&#x53D6;&#x8FD4;&#x56DE;0&#x4E3A;&#x64A4;&#x9632;</span>
-                            armingState = SecurityParser.ARMING_DISARMING;
-                            spinner_arming.setSelection(armingState - <span class="hljs-number">1</span>, <span class="hljs-keyword">true</span>);
-                            tv_mesSetText(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x6210;&#x529F;&#xFF0C;&#x5F53;&#x524D;&#x72B6;&#x6001;&#xFF1A;&quot;</span> + armingTypeItems[armingState - <span class="hljs-number">1</span>]);
-                        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (armingStateBack &gt;= <span class="hljs-number">1</span> &amp;&amp; armingStateBack &lt;= <span class="hljs-number">6</span>) {
-                            armingState = armingStateBack;<span class="hljs-comment">//&#x66F4;&#x65B0;&#x72B6;&#x6001;&#x503C;</span>
-                            spinner_arming.setSelection(armingState - <span class="hljs-number">1</span>, <span class="hljs-keyword">true</span>);
-                            tv_mesSetText(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x6210;&#x529F;&#xFF0C;&#x5F53;&#x524D;&#x72B6;&#x6001;&#xFF1A;&quot;</span> + armingTypeItems[armingState - <span class="hljs-number">1</span>]);
-                        } <span class="hljs-keyword">else</span> {
-                            tv_mesSetText(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x6210;&#x529F;&#xFF0C;&#x672A;&#x77E5;&#x5E03;&#x9632;&#x72B6;&#x6001;&quot;</span>);
-                        }
-
-                    }
-                    <span class="hljs-keyword">break</span>;
-            }
-        }
-    }
-</code></pre>
-<p><strong>&#x6CE8;&#xFF1A;&#x8FD4;&#x56DE;&#x7684; armingState&#x5E03;&#x9632;&#x72B6;&#x6001;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF1A; 5 = &#x767D;&#x5929;&#x5E03;&#x9632; 4 = &#x665A;&#x4E0A;&#x6709;&#x5BA2;&#x5E03;&#x9632; 3 = &#x591C;&#x95F4;&#x5E03;&#x9632; 2 = &#x79BB;&#x5F00;&#x5E03;&#x9632; 1 = &#x5047;&#x671F;&#x5E03;&#x9632;  0 = &#x64A4;&#x9632;</strong></p>
-<h3 id="&#x4E8C;&#x3001;&#x63A7;&#x5236;&#x6539;&#x53D8;&#x72B6;&#x6001;">&#x4E8C;&#x3001;&#x63A7;&#x5236;&#x6539;&#x53D8;&#x72B6;&#x6001;</h3>
-<p><strong>&#x63A5;&#x53E3;&#x63CF;&#x8FF0;</strong></p>
-<p>HDLCommand.securityArmingCtrl(AppliancesInfo info, int state)</p>
-<p>&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#xFF0C;&#x4FEE;&#x6539;&#x5B89;&#x9632;&#x6A21;&#x5757;&#x7684;&#x5E03;&#x9632;&#x72B6;&#x6001;&#x3002;</p>
-<p><strong>&#x6CE8;&#xFF1A;&#x63A7;&#x5236;&#x7684;state&#x5E03;&#x9632;&#x72B6;&#x6001;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF1A;6 = &#x64A4;&#x9632; 5 = &#x767D;&#x5929;&#x5E03;&#x9632; 4 = &#x665A;&#x4E0A;&#x6709;&#x5BA2;&#x5E03;&#x9632; 3 = &#x591C;&#x95F4;&#x5E03;&#x9632; 2 = &#x79BB;&#x5F00;&#x5E03;&#x9632; 1 = &#x5047;&#x671F;&#x5E03;&#x9632;</strong>
-    <strong>&#x64A4;&#x9632;&#x72B6;&#x6001;&#x4E0B;&#x624D;&#x80FD;&#x5E03;&#x9632;&#xFF0C;&#x6240;&#x4EE5;&#x60F3;&#x4FEE;&#x6539;&#x5176;&#x4ED6;&#x5E03;&#x9632;&#x6A21;&#x5F0F;&#x9700;&#x5148;&#x64A4;&#x9632;</strong></p>
-<p><strong>&#x4EE3;&#x7801;&#x8303;&#x4F8B;</strong></p>
-<pre><code class="lang-java">    <span class="hljs-comment">//&#x53D1;&#x9001;&#x4FEE;&#x6539;&#x5E03;&#x9632;&#x72B6;&#x6001;&#x547D;&#x4EE4; </span>
-    HDLCommand.securityArmingCtrl(appliancesInfo, armingState);
-</code></pre>
-<p><strong>&#x63A7;&#x5236;&#x72B6;&#x6001;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;</strong></p>
-<p>&#x5E03;&#x9632;&#x8D85;&#x65F6;&#x6216;&#x6210;&#x529F;&#xFF0C;&#x90FD;&#x4F1A;&#x6536;&#x5230;SecurityArmingFeedBackEvent&#x8BA2;&#x9605;&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#x679C;event.isSuccess()&#x503C;&#x4E3A;false&#xFF0C;&#x5219;&#x4EE3;&#x8868;&#x63A7;&#x5236;&#x8D85;&#x65F6;&#xFF0C;&#x6CA1;&#x6536;&#x5230;&#x8BBE;&#x5907;&#x56DE;&#x590D;&#xFF1B;</p>
-<p>&#x5E76;&#x901A;&#x8FC7;&#x6BD4;&#x8F83;&#x524D;&#x8BBE;&#x5907;&#x548C;&#x56DE;&#x8C03;&#x72B6;&#x6001;&#x8BBE;&#x5907;&#x7684;&#x5B50;&#x7F51;&#x53F7;&#xFF08;getDeviceSubnetID&#xFF09;&#x3001;&#x8BBE;&#x5907;&#x53F7;&#xFF08;getDeviceDeviceID&#xFF09;&#x548C;&#x56DE;&#x8DEF;&#x53F7;&#xFF08;getChannelNum&#xFF09;&#x662F;&#x5426;&#x4E00;&#x81F4;&#xFF0C;&#x4ECE;&#x800C;&#x5224;&#x65AD;&#x8BE5;&#x6D88;&#x606F;&#x4E8B;&#x4EF6;&#x4E3A;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x63A7;&#x5236;&#x72B6;&#x6001;&#x8FD4;&#x56DE;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x8FDB;&#x884C;&#x4E0B;&#x4E00;&#x6B65;&#x5904;&#x7406;&#xFF0C;&#x4E0D;&#x4E00;&#x81F4;&#x5219;&#x8FC7;&#x6EE4;&#x4E0D;&#x5904;&#x7406;&#x3002;</p>
-<p><strong>&#x4EE3;&#x7801;&#x8303;&#x4F8B;</strong></p>
-<pre><code class="lang-java">
-    <span class="hljs-comment">/**
-     * &#x5E03;&#x9632;&#x8BBE;&#x7F6E;&#x56DE;&#x8C03;Event
-     *
-     * <span class="hljs-doctag">@param</span> event
-     */</span>
-    <span class="hljs-meta">@Subscribe</span>(threadMode = ThreadMode.MAIN)
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSecurityArmingFeedBackEventMain</span><span class="hljs-params">(SecurityArmingFeedBackEvent event)</span> </span>{
-        <span class="hljs-keyword">if</span> (event.getAppliancesInfo().getDeviceSubnetID() == appliancesInfo.getDeviceSubnetID()
-                &amp;&amp; event.getAppliancesInfo().getDeviceDeviceID() == appliancesInfo.getDeviceDeviceID()
-                &amp;&amp; event.getAppliancesInfo().getChannelNum() == appliancesInfo.getChannelNum()
-        ) {
-            <span class="hljs-comment">//&#x5148;&#x5224;&#x65AD;&#x662F;&#x5426;&#x8D85;&#x65F6;</span>
             <span class="hljs-keyword">if</span> (!event.isSuccess()) {
-                tv_mesSetText(<span class="hljs-string">&quot;&#x5E03;&#x9632;&#x8BBE;&#x7F6E;&#x8D85;&#x65F6;&#xFF0C;&#x8BF7;&#x91CD;&#x65B0;&#x518D;&#x8BD5;&quot;</span>);
+                showToast(<span class="hljs-string">&quot;&#x901A;&#x7528;&#x5F00;&#x5173;&#x8BFB;&#x53D6;&#x72B6;&#x6001;&#x8D85;&#x65F6;&#xFF0C;&#x8BF7;&#x91CD;&#x65B0;&#x518D;&#x8BD5;&quot;</span>);
                 <span class="hljs-keyword">return</span>;
             }
 
-            <span class="hljs-keyword">int</span> armingStateGet = event.getArmingState();
-            <span class="hljs-keyword">if</span> (armingStateGet &gt;= <span class="hljs-number">1</span> &amp;&amp; armingStateGet &lt;= <span class="hljs-number">6</span>) {
-                armingState = armingStateGet;
-                spinner_arming.setSelection(armingState - <span class="hljs-number">1</span>, <span class="hljs-keyword">true</span>);
-                tv_mesSetText(<span class="hljs-string">&quot;&#x5E03;&#x9632;&#x6210;&#x529F;&#xFF0C;&#x5F53;&#x524D;&#x72B6;&#x6001;&#xFF1A;&quot;</span> + armingTypeItems[armingState - <span class="hljs-number">1</span>]);
-            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (armingState == SecurityParser.ARMING_FAIL) {
-                tv_mesSetText(<span class="hljs-string">&quot;&#x5E03;&#x9632;&#x5931;&#x8D25;&quot;</span>);
-            } <span class="hljs-keyword">else</span> {
-                tv_mesSetText(<span class="hljs-string">&quot;&#x672A;&#x77E5;&#x5E03;&#x9632;&#x72B6;&#x6001;&quot;</span>);
+<span class="hljs-comment">//            showToast(&quot;&#x901A;&#x7528;&#x5F00;&#x5173;&#x63A7;&#x5236;&#x6210;&#x529F;&quot;);</span>
+
+            switchState =  event.getCommonSwitchBackInfo().getSwitchState();
+            <span class="hljs-keyword">if</span>(switchState&gt;<span class="hljs-number">0</span>){
+                switchText.setText(<span class="hljs-string">&quot;&#x5F53;&#x524D;&#x72B6;&#x6001;&#xFF1A;&#x5F00;&quot;</span>);
+            }<span class="hljs-keyword">else</span>{
+                switchText.setText(<span class="hljs-string">&quot;&#x5F53;&#x524D;&#x72B6;&#x6001;&#xFF1A;&#x5173;&quot;</span>);
             }
         }
+
+    }
+</code></pre>
+<h3 id="&#x4E8C;&#x3001;&#x63A7;&#x5236;&#x6539;&#x53D8;&#x72B6;&#x6001;">&#x4E8C;&#x3001;&#x63A7;&#x5236;&#x6539;&#x53D8;&#x72B6;&#x6001;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x63CF;&#x8FF0;</strong></p>
+<p>HDLCommand.commonSwitchCtrl(AppliancesInfo info, int )</p>
+<p>&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x901A;&#x7528;&#x5F00;&#x5173;&#x6A21;&#x5757;&#x7684;&#x5F00;&#x5173;&#x72B6;&#x6001;&#x3002;</p>
+<p><strong>&#x4EE3;&#x7801;&#x8303;&#x4F8B;</strong></p>
+<pre><code class="lang-java">    <span class="hljs-comment">//&#x53D1;&#x9001;&#x63A7;&#x5236;&#x901A;&#x7528;&#x5F00;&#x5173;&#x6307;&#x4EE4; </span>
+    <span class="hljs-comment">//appliancesInfo&#xFF1A;&#x4E3A;&#x9700;&#x8981;&#x63A7;&#x5236;&#x7684;&#x7684;&#x6A21;&#x5757;info&#x53C2;&#x6570;&#xFF0C;&#x91CC;&#x9762;&#x4FDD;&#x5B58;&#x4E86;&#x5F53;&#x524D;&#x56DE;&#x8DEF;&#x6A21;&#x5757;&#x7684;&#x6240;&#x6709;&#x53C2;&#x6570;&#x4FE1;&#x606F;</span>
+    <span class="hljs-comment">//0=&#x5173; 255=&#x5F00;</span>
+    HDLCommand.commonSwitchCtrl(appliancesInfo, state);
+</code></pre>
+<p><strong>&#x63A7;&#x5236;&#x72B6;&#x6001;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;</strong></p>
+<p>&#x63A7;&#x5236;&#x72B6;&#x6001;&#x8D85;&#x65F6;&#x6216;&#x6210;&#x529F;&#xFF0C;&#x90FD;&#x4F1A;&#x6536;&#x5230;CommonSwitchCtrlBackEvent&#x8BA2;&#x9605;&#x4E8B;&#x4EF6;&#xFF0C;&#x901A;&#x7528;&#x5F00;&#x5173;&#x63A7;&#x5236;&#x56DE;&#x8C03;&#x90FD;&#x7EDF;&#x4E00;&#x7528;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#x679C;event.isSuccess()&#x503C;&#x4E3A;false&#xFF0C;&#x5219;&#x4EE3;&#x8868;&#x63A7;&#x5236;&#x8D85;&#x65F6;&#xFF0C;&#x6CA1;&#x6536;&#x5230;&#x8BBE;&#x5907;&#x56DE;&#x590D;&#xFF1B;</p>
+<p>&#x5E76;&#x901A;&#x8FC7;&#x6BD4;&#x8F83;&#x524D;&#x8BBE;&#x5907;&#x548C;&#x56DE;&#x8C03;&#x72B6;&#x6001;&#x8BBE;&#x5907;&#x7684;&#x5B50;&#x7F51;&#x53F7;&#xFF08;getDeviceSubnetID&#xFF09;&#x3001;&#x8BBE;&#x5907;&#x53F7;&#xFF08;getDeviceDeviceID&#xFF09;&#x548C;&#x56DE;&#x8DEF;&#x53F7;&#xFF08;getChannelNum&#xFF09;&#x662F;&#x5426;&#x4E00;&#x81F4;&#xFF0C;&#x4ECE;&#x800C;&#x5224;&#x65AD;&#x8BE5;&#x6D88;&#x606F;&#x4E8B;&#x4EF6;&#x4E3A;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x63A7;&#x5236;&#x72B6;&#x6001;&#x8FD4;&#x56DE;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x8FDB;&#x884C;&#x4E0B;&#x4E00;&#x6B65;&#x5904;&#x7406;&#xFF0C;&#x4E0D;&#x4E00;&#x81F4;&#x5219;&#x8FC7;&#x6EE4;&#x4E0D;&#x5904;&#x7406;&#x3002;</p>
+<p><strong>&#x4EE3;&#x7801;&#x8303;&#x4F8B;</strong></p>
+<pre><code class="lang-java">    <span class="hljs-comment">/**
+     * &#x901A;&#x7528;&#x5F00;&#x5173;&#x63A7;&#x5236;&#x56DE;&#x8C03;Event
+     *
+     * <span class="hljs-doctag">@param</span> event
+     */</span>
+    <span class="hljs-meta">@Subscribe</span>(threadMode = ThreadMode.MAIN)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCommonSwitchCtrlEventMain</span><span class="hljs-params">(CommonSwitchCtrlBackEvent event)</span> </span>{
+        <span class="hljs-keyword">if</span> (event.getCommonSwitchBackInfo().getAppliancesInfo().getDeviceDeviceID() == appliancesInfo.getDeviceDeviceID()
+                &amp;&amp; event.getCommonSwitchBackInfo().getAppliancesInfo().getDeviceSubnetID() == appliancesInfo.getDeviceSubnetID()
+                &amp;&amp; event.getCommonSwitchBackInfo().getAppliancesInfo().getChannelNum() == appliancesInfo.getChannelNum()
+        ) {
+            <span class="hljs-keyword">if</span> (!event.isSuccess()) {
+                showToast(<span class="hljs-string">&quot;&#x901A;&#x7528;&#x5F00;&#x5173;&#x63A7;&#x5236;&#x8D85;&#x65F6;&#xFF0C;&#x8BF7;&#x91CD;&#x65B0;&#x518D;&#x8BD5;&quot;</span>);
+                <span class="hljs-keyword">return</span>;
+            }
+
+            showToast(<span class="hljs-string">&quot;&#x901A;&#x7528;&#x5F00;&#x5173;&#x63A7;&#x5236;&#x6210;&#x529F;&quot;</span>);
+
+            switchState =  event.getCommonSwitchBackInfo().getSwitchState();
+            <span class="hljs-keyword">if</span>(switchState&gt;<span class="hljs-number">0</span>){
+                 switchText.setText(<span class="hljs-string">&quot;&#x5F53;&#x524D;&#x72B6;&#x6001;&#xFF1A;&#x5F00;&quot;</span>);
+            }<span class="hljs-keyword">else</span>{
+                switchText.setText(<span class="hljs-string">&quot;&#x5F53;&#x524D;&#x72B6;&#x6001;&#xFF1A;&#x5173;&quot;</span>);
+            }
+        }
+
     }
 </code></pre>
 
@@ -494,12 +473,12 @@
 
             
                 
-                <a href="api_control_music.html" class="navigation navigation-prev " aria-label="Previous page: 背景音乐功能类模块">
+                <a href="api_control_scenes.html" class="navigation navigation-prev " aria-label="Previous page: 场景控制（逻辑模块）">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="api_control_scenes.html" class="navigation navigation-next " aria-label="Next page: 场景控制（逻辑模块）">
+                <a href="api_mcu_about.html" class="navigation navigation-next " aria-label="Next page: MCU功能接口">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -510,7 +489,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"安防类模块","level":"1.4.5","depth":2,"next":{"title":"场景控制（逻辑模块）","level":"1.4.6","depth":2,"path":"src/api_control_scenes.md","ref":"./src/api_control_scenes.md","articles":[]},"previous":{"title":"背景音乐功能类模块","level":"1.4.4","depth":2,"path":"src/api_control_music.md","ref":"./src/api_control_music.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/api_control_security.md","mtime":"2019-08-16T08:49:33.889Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-01T09:07:10.806Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"通用开关模块","level":"1.4.7","depth":2,"next":{"title":"MCU功能接口","level":"1.5","depth":1,"path":"src/api_mcu_about.md","ref":"./src/api_mcu_about.md","articles":[{"title":"MCU通信","level":"1.5.1","depth":2,"path":"src/api_mcu.md","ref":"./src/api_mcu.md","articles":[]}]},"previous":{"title":"场景控制（逻辑模块）","level":"1.4.6","depth":2,"path":"src/api_control_scenes.md","ref":"./src/api_control_scenes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/api_control_switch.md","mtime":"2020-04-01T08:34:02.538Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-01T09:07:10.806Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

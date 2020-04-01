@@ -7,9 +7,9 @@ HVAC 模块（0）
 
 ### 一、HVAC模块查询状态
 
-**HDLCommand.getHVACDeviceStateFromNetwork(AppliancesInfo info)**
-
 **接口描述**
+
+HDLCommand.getHVACDeviceStateFromNetwork(AppliancesInfo info)
 
 调用该接口，获取HVAC空调设备状态。
 
@@ -71,9 +71,9 @@ HVAC 模块（0）
 
 ### 二、HVAC模块控制改变状态
 
-**HDLCommand.airCtrl(AppliancesInfo info, int type, int state)**
-
 **接口描述**
+
+HDLCommand.airCtrl(AppliancesInfo info, int type, int state)
 
 type：需要控制功能命令参数
 
@@ -167,13 +167,11 @@ state：需要控制功能对应的状态值
 
 ### 三、通用空调面板查询状态
 
-**HDLCommand.getDeviceStateFromLocal(AppliancesInfo info)**
-
 **接口描述**
 
-通用空调面板不支持在线请求查询状态，只能查询获取SDK保存本地的状态；
+通用空调面板不支持查询状态，
 
-调用HDLCommand.getDeviceStateFromLocal(appliancesInfo)接口即可。
+注：通用空调面板空调DeviceType设备类型为HDLApConfig.TYPE_AC_PANEL。
 
 
 **状态改变回调事件监听**
@@ -186,15 +184,7 @@ state：需要控制功能对应的状态值
 
 **代码范例**
 
-注：通用空调面板空调DeviceType设备类型为HDLApConfig.TYPE_AC_PANEL。
-
 ```java
-
-    .......
-    //从本地获取空调面板状态
-    HDLCommand.getDeviceStateFromLocal(appliancesInfo);
-    .......
-
 
     /**
      * 获取单一设备状态回调Event
@@ -268,9 +258,9 @@ state：需要控制功能对应的状态值
 
 ### 四、通用空调面板控制改变状态
 
-**HDLCommand.airCtrl(AppliancesInfo info, int type, int state)**
-
 **接口描述**
+
+HDLCommand.airCtrl(AppliancesInfo info, int type, int state)
 
 type：需要控制功能命令参数
 
