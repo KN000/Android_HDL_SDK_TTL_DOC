@@ -1,9 +1,9 @@
 # 场景控制（逻辑模块）
 
 **场景控制的类型**
-大类
-逻辑模块（12）
-全局逻辑模块（17）
+
+逻辑模块（大类 12 小类 0 ）
+全局逻辑模块（大类 17 小类 0） 
 
 ### 一、查询状态
 
@@ -22,30 +22,34 @@ HDLCommand.getSceneNumStateFromNetwork(AppliancesInfo info)
 
 **查询状态回调事件监听**
 
-    查询状态超时或成功，都会收到LogicFeedBackEvent订阅事件，如果event.isSuccess()值为false，则代表查询超时，没收到设备回复；
-   同时还会收到ScenesStateBackEvent订阅事件，收到场景变化通知或者控制回复都会推送该事件，可以根据该事件 判断当前场景的状态信息
+    查询状态成功，会收到ScenesStateBackEvent订阅事件，同时场景变化也会收到该事件回调
 
 **代码范例**
 ```java
    
-    /**
-     * 当前场景状态 通知Event
-     *
+      /**
+     * 当前场景状态变化都会推送这个通知Event
+     * 更加项目需要， 这里的区号有的情况下不需处理，有的设备固定是1 只需处理场景号，判断目前执行了那个场景就行
      * @param event
      */
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onScenesStateBackEventMain(ScenesStateBackEvent event) {
         if (event.getDeviceDeviceID() == appliancesInfo.getDeviceDeviceID()
                 && event.getDeviceSubnetID() == appliancesInfo.getDeviceSubnetID()) {
-            //相同区号相同场景号，其他场景号、则为执行了其他场景号
-            int mAreaNum = event.getAreaNum();
+//            //
+//            int mAreaNum = event.getAreaNum();
+//            int mSceneNum = event.getSceneNum();
+//
+//            //可以自己通过区号 和 场景号 来匹配判断当前执行了什么场景
+//            sceneText.setText("当前模块执行的场景区号: " + mAreaNum + "  场景号: "+mSceneNum);
+            
             int mSceneNum = event.getSceneNum();
-
-            //可以自己通过区号 和 场景号 来匹配判断当前执行了什么场景
-            sceneText.setText("当前模块执行的场景区号: " + mAreaNum + "  场景号: "+mSceneNum);
+            //可以自己通过场景号 来匹配判断当前执行了什么场景
+            sceneText.setText("当前模块执行的场景号: "+mSceneNum);
 
         }
     }
+
 ```
 
 
@@ -53,9 +57,9 @@ HDLCommand.getSceneNumStateFromNetwork(AppliancesInfo info)
 
 **接口描述**
 
-HDLCommand.commonSwitchCtrl(AppliancesInfo info, int )
+HDLCommand.logicCtrl(AppliancesInfo info)
 
-调用该接口，可以控制通用开关模块的开关状态。
+调用该接口，可以执行相应的场景。
 
 **代码范例**
 
@@ -68,7 +72,9 @@ HDLCommand.commonSwitchCtrl(AppliancesInfo info, int )
 
 **控制状态回调事件监听**
 
-控制状态超时或成功，都会收到LogicFeedBackEvent 订阅事件，通用开关控制回调都统一用这个事件，如果event.isSuccess()值为false，则代表控制超时，没收到设备回复；
+控制场景超时或成功，都会收到LogicFeedBackEvent 订阅事件，通用开关控制回调都统一用这个事件，如果event.isSuccess()值为false，则代表控制超时，没收到设备回复；
+
+如果控制成功的话，场景状态变化，也会收到ScenesStateBackEvent订阅事件，可以自己通过场景号 来匹配判断当前执行了什么场景
 
 
 **代码范例**
@@ -90,6 +96,29 @@ HDLCommand.commonSwitchCtrl(AppliancesInfo info, int )
                 return;
             }
             showToast("场景控制成功");
+        }
+    }
+
+   /**
+     * 当前场景状态变化都会推送这个通知Event
+     * 更加项目需要， 这里的区号有的情况下不需处理，有的设备固定是1 只需处理场景号，判断目前执行了那个场景就行
+     * @param event
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onScenesStateBackEventMain(ScenesStateBackEvent event) {
+        if (event.getDeviceDeviceID() == appliancesInfo.getDeviceDeviceID()
+                && event.getDeviceSubnetID() == appliancesInfo.getDeviceSubnetID()) {
+//            //
+//            int mAreaNum = event.getAreaNum();
+//            int mSceneNum = event.getSceneNum();
+//
+//            //可以自己通过区号 和 场景号 来匹配判断当前执行了什么场景
+//            sceneText.setText("当前模块执行的场景区号: " + mAreaNum + "  场景号: "+mSceneNum);
+            
+            int mSceneNum = event.getSceneNum();
+            //可以自己通过场景号 来匹配判断当前执行了什么场景
+            sceneText.setText("当前模块执行的场景号: "+mSceneNum);
+
         }
     }
 

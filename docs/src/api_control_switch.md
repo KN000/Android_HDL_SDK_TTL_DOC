@@ -2,7 +2,7 @@
 
 **通用开关模块的类型**
 
-通用开关（00）
+通用开关（大类 100 小类 0）
 
 ### 一、查询状态
 
@@ -80,7 +80,7 @@ HDLCommand.commonSwitchCtrl(AppliancesInfo info, int )
 
 **控制状态回调事件监听**
 
-控制状态超时或成功，都会收到CommonSwitchCtrlBackEvent订阅事件，通用开关控制回调都统一用这个事件，如果event.isSuccess()值为false，则代表控制超时，没收到设备回复；
+控制超时或成功，都会收到CommonSwitchCtrlBackEvent订阅事件，通用开关控制回调都统一用这个事件，如果event.isSuccess()值为false，则代表控制超时，没收到设备回复；
 
 并通过比较前设备和回调状态设备的子网号（getDeviceSubnetID）、设备号（getDeviceDeviceID）和回路号（getChannelNum）是否一致，从而判断该消息事件为当前设备控制状态返回的消息，进行下一步处理，不一致则过滤不处理。
 

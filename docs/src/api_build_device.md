@@ -16,8 +16,8 @@
  * Configuration.GLOBAL_LOGIC_BIG_TYPE
  * Configuration.SECURITY_BIG_TYPE
  * Configuration.COMMON_SWITCH_BIG_TYPE
- *
- * 灯光类1：0 ，1，9，10
+ * 
+ * 灯光类1：0 ，1，9，10 （后面为小类ID号）
  * 窗帘类2：0，1，2
  * 传感器5：0~24
  * 空调类7：0，3

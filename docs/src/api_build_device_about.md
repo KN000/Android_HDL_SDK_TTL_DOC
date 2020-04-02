@@ -45,10 +45,11 @@
          * @param mChannelNum  回路号
          * @param mChannelRemark 回路备注 例如：窗帘、吊灯、厕所灯、电视
          * @param parentRemarks  当前回路模块的备注 例如: 酒店RCU模块
+         * @param bSaveAndCallBack 是否马上保存本地并且推送DevicesInfoEvent 事件
          * @return
          */
         //如果存在相同子网号 设备号，则当成混合模块添加到该回路下，不存在则新添加模块
-        DevicesData mDevicesData = DeviceParser.addDevicesListWithoutSearching(bigType, littleType, mSubnetID, mDeviceID, mChannelNum, remarksString, parentRemarks);
+        DevicesData mDevicesData = DeviceParser.addDevicesListWithoutSearching(bigType, littleType, mSubnetID, mDeviceID, mChannelNum, remarksString, parentRemarks,true);
         if (mDevicesData != null) {
             showToast("添加成功");
         } else {
@@ -81,6 +82,40 @@
 
 ```
 
+批量添加，仅做演示用
+
+**代码范例**
+
+```java
+
+        //添加一个灯
+        DeviceParser.addDevicesListWithoutSearching(Configuration.LIGTH_BIG_TYPE, 0, mSubnetID, mDeviceID, 6, "夜灯", parentRemarks,false);
+        //添加一个灯
+        DeviceParser.addDevicesListWithoutSearching(Configuration.LIGTH_BIG_TYPE, 0, mSubnetID, mDeviceID, 7, "床头灯", parentRemarks,false);
+        //添加一个灯
+        DeviceParser.addDevicesListWithoutSearching(Configuration.LIGTH_BIG_TYPE, 0, mSubnetID, mDeviceID, 8, "客房插座", parentRemarks,false);
+        //添加一个灯
+        DeviceParser.addDevicesListWithoutSearching(Configuration.LIGTH_BIG_TYPE, 0, mSubnetID, mDeviceID, 12, "衣柜灯", parentRemarks,false);
+
+        //添加一个窗帘
+        DeviceParser.addDevicesListWithoutSearching(Configuration.CURTAIN_BIG_TYPE, 2, mSubnetID, mDeviceID, 1, "窗帘", parentRemarks,false);
+        //添加一个空调
+        DeviceParser.addDevicesListWithoutSearching(Configuration.AIR_BIG_TYPE, 0, mSubnetID, mDeviceID, 1, "房间空调", parentRemarks,false);
+
+
+        //添加一个场景 这里场景号和区号 默认一样
+        DeviceParser.addScenesDevicesListWithoutSearching(mSubnetID, mDeviceID, 1, 1, "空置无卡", parentRemarks,false);
+        //添加一个场景
+        DeviceParser.addScenesDevicesListWithoutSearching(mSubnetID, mDeviceID, 3, 3, "明亮场景", parentRemarks,false);
+        //添加一个场景
+        DeviceParser.addScenesDevicesListWithoutSearching(mSubnetID, mDeviceID, 4, 4, "房灯", parentRemarks,false);
+        //添加一个场景 最后一个bSaveAndCallBack 设置为true
+        DeviceParser.addScenesDevicesListWithoutSearching(mSubnetID, mDeviceID, 5, 5, "总开关", parentRemarks,true);
+
+
+```
+
+
 ### 二、添加场景
 **代码范例**
 
@@ -96,11 +131,12 @@
      * @param mAreaSceneNum  //场景 当前区域场景号
      * @param mChannelRemark 读取场景的备注名称 例如: 入住、起床模式、阅读模式
      * @param parentRemarks  当前回路模块的备注 例如: 酒店RCU模块
+     * @param bSaveAndCallBack 是否马上保存本地并且推送DevicesInfoEvent 事件
      * @return
      */
-    private void AddScenesDevices(int mSubnetID, int mDeviceID, int mAreaNum, int mAreaSceneNum, String mChannelRemark, String parentRemarks) {
+    private void AddScenesDevices(int mSubnetID, int mDeviceID, int mAreaNum, int mAreaSceneNum, String mChannelRemark, String parentRemarks, boolean bSaveAndCallBack) {
         //添加场景
-        DevicesData mScenesData = DeviceParser.addScenesDevicesListWithoutSearching(mSubnetID, mDeviceID, mAreaNum, mAreaSceneNum, mChannelRemark, parentRemarks);
+        DevicesData mScenesData = DeviceParser.addScenesDevicesListWithoutSearching(mSubnetID, mDeviceID, mAreaNum, mAreaSceneNum, mChannelRemark, parentRemarks,true);
     }
 
 
