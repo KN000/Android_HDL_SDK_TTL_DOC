@@ -233,6 +233,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.8" data-path="api_control_freshair.html">
+            
+                <a href="api_control_freshair.html">
+            
+                    
+                    新风类模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="api_control_geothermal.html">
+            
+                <a href="api_control_geothermal.html">
+            
+                    
+                    地热类模块
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -373,16 +399,20 @@
  * Configuration.GLOBAL_LOGIC_BIG_TYPE
  * Configuration.SECURITY_BIG_TYPE
  * Configuration.COMMON_SWITCH_BIG_TYPE
+ * Configuration.FRESH_AIR_BIG_TYPE
+ * Configuration.GEOTHERMAL_BIG_TYPE
  * 
- * &#x706F;&#x5149;&#x7C7B;1&#xFF1A;0 &#xFF0C;1&#xFF0C;9&#xFF0C;10 &#xFF08;&#x540E;&#x9762;&#x4E3A;&#x5C0F;&#x7C7B;ID&#x53F7;&#xFF09;
- * &#x7A97;&#x5E18;&#x7C7B;2&#xFF1A;0&#xFF0C;1&#xFF0C;2
- * &#x4F20;&#x611F;&#x5668;5&#xFF1A;0~24
- * &#x7A7A;&#x8C03;&#x7C7B;7&#xFF1A;0&#xFF0C;3
+ * &#x706F;&#x5149;&#x7C7B;1&#xFF1A;0 &#xFF0C;1&#xFF0C;9&#xFF0C;10 &#xFF08;&#x540E;&#x9762;&#x4E3A;&#x5C0F;&#x7C7B;ID&#x53F7;&#xFF09;****&#x8C03;&#x5149;&#x56DE;&#x8DEF;&#xFF08;0&#xFF09; &#x5F00;&#x5173;&#x56DE;&#x8DEF;&#xFF08;1&#xFF09; &#x6DF7;&#x5408;&#x8C03;&#x5149;&#x7C7B;&#xFF08;9&#xFF09; &#x6DF7;&#x5408;&#x5F00;&#x5173;&#x7C7B;&#xFF08;10&#xFF09;
+ * &#x7A97;&#x5E18;&#x7C7B;2&#xFF1A;0&#xFF0C;1&#xFF0C;2       ****&#x5F00;&#x5408;&#x5E18;&#x7535;&#x673A;&#xFF08;0&#xFF09; &#x5377;&#x5E18;&#x7535;&#x673A;&#xFF08;1&#xFF09; &#x7A97;&#x5E18;&#x6A21;&#x5757;&#xFF08;2&#xFF09;
+ * &#x4F20;&#x611F;&#x5668;5&#xFF1A;2&#xFF0C;10&#xFF0C;12&#xFF0C;26&#xFF0C;27&#xFF0C;28  **** &#x7EA2;&#x5916;&#x611F;&#x5E94;&#x4F20;&#x611F;&#x5668;&#xFF08;2&#xFF09;&#x7164;&#x6C14;&#x4F20;&#x611F;&#x5668;&#xFF08;10&#xFF09; &#x70DF;&#x96FE;&#x4F20;&#x611F;&#x5668;&#xFF08;12&#xFF09;&#x6C34;&#x6D78;&#x4F20;&#x611F;&#x5668;&#xFF08;26&#xFF09; &#x95E8;&#x78C1;&#x4F20;&#x611F;&#x5668;&#xFF08;27&#xFF09; &#x7D27;&#x6025;&#x6309;&#x94AE;&#xFF08;28&#xFF09;
+ * &#x7A7A;&#x8C03;&#x7C7B;7&#xFF1A;0&#xFF0C;3          ****HVAC &#x6A21;&#x5757;(0) &#x901A;&#x7528;&#x7A7A;&#x8C03;&#x9762;&#x677F;(3) 
  * &#x80CC;&#x666F;&#x97F3;&#x4E50;&#x529F;&#x80FD;9&#xFF1A;0
  * &#x903B;&#x8F91;&#x529F;&#x80FD;12&#xFF1A;0
  * &#x5168;&#x5C40;&#x573A;&#x666F;17&#xFF1A;0
  * &#x5B89;&#x9632;10&#xFF1A;0
- * &#x901A;&#x7528;&#x5F00;&#x5173;100&#xFF1A;0
+ * &#x901A;&#x7528;&#x5F00;&#x5173;100&#xFF1A;0        
+ * &#x65B0;&#x98CE;&#x7C7B;&#x8BBE;&#x5907;19&#xFF1A;0&#xFF0C;1     ****&#x6807;&#x51C6;&#x65B0;&#x98CE;&#x7CFB;&#x7EDF;(0) &#x5B9A;&#x5236;&#x65B0;&#x98CE;&#x534F;&#x8BAE;&#x8BBE;&#x5907;(1) 
+ * &#x5730;&#x70ED;&#x7C7B;8&#xFF1A;0            ****&#x5730;&#x70ED;&#x6A21;&#x5757;(0) 
  *
  * &#x8BE5;&#x65B9;&#x6CD5;&#x5E94;&#x7528;&#x4E8E;&#x63D0;&#x4F9B;&#x9879;&#x76EE;&#x4EA4;&#x4ED8;&#x524D;&#x7684;&#x63D0;&#x53D6;&#x6279;&#x91CF;&#x6570;&#x636E;&#x751F;&#x6210;&#x597D;&#x6570;&#x636E;&#x3002;
  * &#x6A21;&#x62DF;&#x751F;&#x6210;&#x8BBE;&#x5907;&#x56DE;&#x8DEF;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x9879;&#x76EE;&#x4E0D;&#x652F;&#x6301;&#x7B80;&#x6613;&#x7F16;&#x7A0B;&#x641C;&#x7D22;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x5148;&#x5FEB;&#x6377;&#x751F;&#x6210;&#x76EE;&#x6807;&#x6570;&#x636E; &#x5F97;&#x5230; List&lt;DevicesData&gt; &#x683C;&#x5F0F;&#x7684;&#x8BBE;&#x5907;&#x5217;&#x8868;&#x6570;&#x636E;
@@ -434,7 +464,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"非搜索设备解决方案","level":"1.6","depth":1,"next":{"title":"生成目标设备数据","level":"1.6.1","depth":2,"path":"src/api_build_device_about.md","ref":"./src/api_build_device_about.md","articles":[]},"previous":{"title":"MCU通信","level":"1.5.1","depth":2,"path":"src/api_mcu.md","ref":"./src/api_mcu.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/api_build_device.md","mtime":"2020-04-02T03:24:58.449Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-02T03:25:49.763Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"非搜索设备解决方案","level":"1.6","depth":1,"next":{"title":"生成目标设备数据","level":"1.6.1","depth":2,"path":"src/api_build_device_about.md","ref":"./src/api_build_device_about.md","articles":[]},"previous":{"title":"MCU通信","level":"1.5.1","depth":2,"path":"src/api_mcu.md","ref":"./src/api_mcu.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/api_build_device.md","mtime":"2020-07-20T07:21:26.800Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-21T07:35:29.650Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
