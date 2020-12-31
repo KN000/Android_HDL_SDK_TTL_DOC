@@ -695,6 +695,57 @@
      HDLCommand.setHDLPassThroughOpen(<span class="hljs-keyword">false</span>);
     .......
 </code></pre>
+<h3 id="&#x4E03;&#x3001;mcu&#x5E72;&#x63A5;&#x70B9;&#x72B6;&#x6001;&#x8BFB;&#x53D6;&#x548C;&#x76D1;&#x542C;&#xFF08;&#x65B0;mcu&#x5C0F;&#x677F;&#xFF0C;&#x5E26;&#x5E72;&#x63A5;&#x70B9;&#x529F;&#x80FD;&#xFF09;">&#x4E03;&#x3001;MCU&#x5E72;&#x63A5;&#x70B9;&#x72B6;&#x6001;&#x8BFB;&#x53D6;&#x548C;&#x76D1;&#x542C;&#xFF08;&#x65B0;MCU&#x5C0F;&#x677F;&#xFF0C;&#x5E26;&#x5E72;&#x63A5;&#x70B9;&#x529F;&#x80FD;&#xFF09;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x63CF;&#x8FF0;</strong></p>
+<p>HDLCommand.mcuReadDryContactStatus()</p>
+<p>&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x8BFB;&#x53D6;&#x65B0;&#x7248;&#x672C;MCU&#x5C0F;&#x677F;&#x5E72;&#x63A5;&#x70B9;&#x72B6;&#x6001;&#x7684;&#x6307;&#x4EE4;&#x3002;</p>
+<p>&#x6CE8;&#xFF1A;&#x8BFB;&#x53D6;&#x72B6;&#x6001;&#x56DE;&#x590D; bit0~7 &#x4EE3;&#x8868;&#x5E72;&#x63A5;&#x70B9;1~8&#x7684;&#x72B6;&#x6001;  0&#xFF1A;&#x95ED;&#x5408;&#xFF0C;1&#xFF1A;&#x65AD;&#x5F00;</p>
+<p><strong>&#x4EE3;&#x7801;&#x8303;&#x4F8B;</strong></p>
+<pre><code class="lang-java">    .......
+    <span class="hljs-comment">/**
+    * MCU&#x8BFB;&#x5E72;&#x63A5;&#x70B9;&#x72B6;&#x6001;
+    * &#x8BFB;&#x53D6;&#x72B6;&#x6001;&#x56DE;&#x590D; bit0~7 &#x4EE3;&#x8868;&#x5E72;&#x63A5;&#x70B9;1~8&#x7684;&#x72B6;&#x6001;  0&#xFF1A;&#x95ED;&#x5408;&#xFF0C;1&#xFF1A;&#x65AD;&#x5F00;
+    */</span>
+    HDLCommand.mcuReadDryContactStatus();
+    .......
+</code></pre>
+<p>MCU&#x5E72;&#x63A5;&#x70B9;&#x72B6;&#x6001;&#x63A5;&#x6536;</p>
+<p>&#x8BFB;&#x53D6;&#x56DE;&#x590D;&#x6216;&#x8005;MCU&#x4E3B;&#x52A8;&#x4E0A;&#x62A5;&#x5E72;&#x63A5;&#x70B9;&#x72B6;&#x6001;&#xFF0C;&#x90FD;&#x4F1A;&#x6536;&#x5230;MCUDryContactStatusBackEvent&#x8BA2;&#x9605;&#x4E8B;&#x4EF6;</p>
+<p>&#x63A5;&#x6536;&#x7684;&#x5E72;&#x63A5;&#x70B9;&#x72B6;&#x6001;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4ECE;event&#x83B7;&#x53D6;&#xFF0C;byte allStatus = event.getStatus();</p>
+<p><strong>&#x4EE3;&#x7801;&#x8303;&#x4F8B;</strong></p>
+<pre><code class="lang-java">    <span class="hljs-comment">/**
+     * MCU&#x5E72;&#x63A5;&#x70B9;&#x72B6;&#x6001;&#x56DE;&#x8C03;Event
+     * &#x8BFB;&#x53D6;&#x56DE;&#x590D;&#x6216;&#x8005;MCU&#x4E3B;&#x52A8;&#x4E0A;&#x62A5;&#x5E72;&#x63A5;&#x70B9;&#x72B6;&#x6001;&#x90FD;&#x8D70;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x56DE;&#x8C03;
+     * <span class="hljs-doctag">@param</span> event
+     */</span>
+    <span class="hljs-meta">@Subscribe</span>(threadMode = ThreadMode.MAIN)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onMCUDryContactStatusBackEventMain</span><span class="hljs-params">(MCUDryContactStatusBackEvent event)</span> </span>{
+        <span class="hljs-comment">//bit0~7 &#x4EE3;&#x8868;&#x5E72;&#x63A5;&#x70B9;1~8&#x7684;&#x72B6;&#x6001;  0&#xFF1A;&#x95ED;&#x5408;&#xFF0C;1&#xFF1A;&#x65AD;&#x5F00;</span>
+        <span class="hljs-keyword">byte</span> allStatus = event.getStatus();
+        <span class="hljs-keyword">int</span> dryContact1 = HDLUtlis.getBit(allStatus, <span class="hljs-number">0</span>);
+        <span class="hljs-keyword">int</span> dryContact2 = HDLUtlis.getBit(allStatus, <span class="hljs-number">1</span>);
+        <span class="hljs-keyword">int</span> dryContact3 = HDLUtlis.getBit(allStatus, <span class="hljs-number">2</span>);
+        <span class="hljs-keyword">int</span> dryContact4 = HDLUtlis.getBit(allStatus, <span class="hljs-number">3</span>);
+        <span class="hljs-keyword">int</span> dryContact5 = HDLUtlis.getBit(allStatus, <span class="hljs-number">4</span>);
+        <span class="hljs-keyword">int</span> dryContact6 = HDLUtlis.getBit(allStatus, <span class="hljs-number">5</span>);
+        <span class="hljs-keyword">int</span> dryContact7 = HDLUtlis.getBit(allStatus, <span class="hljs-number">6</span>);
+        <span class="hljs-keyword">int</span> dryContact8 = HDLUtlis.getBit(allStatus, <span class="hljs-number">7</span>);
+
+        <span class="hljs-comment">//&#x6839;&#x636E;&#x9700;&#x8981; &#x89E3;&#x6790;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x5E72;&#x63A5;&#x70B9;&#x4F4D;&#x7F6E;&#xFF0C;&#x76EE;&#x524D;&#x6700;&#x591A;&#x652F;&#x6301;8&#x4E2A;</span>
+        String message = <span class="hljs-string">&quot;&quot;</span>;
+        message += <span class="hljs-string">&quot;\n&quot;</span> + <span class="hljs-string">&quot;&#x5E72;&#x63A5;&#x70B9;1&#xFF1A;&quot;</span> + getStatusString(dryContact1);
+        message += <span class="hljs-string">&quot;\n&quot;</span> + <span class="hljs-string">&quot;&#x5E72;&#x63A5;&#x70B9;2&#xFF1A;&quot;</span> + getStatusString(dryContact2);
+        message += <span class="hljs-string">&quot;\n&quot;</span> + <span class="hljs-string">&quot;&#x5E72;&#x63A5;&#x70B9;3&#xFF1A;&quot;</span> + getStatusString(dryContact3);
+        message += <span class="hljs-string">&quot;\n&quot;</span> + <span class="hljs-string">&quot;&#x5E72;&#x63A5;&#x70B9;4&#xFF1A;&quot;</span> + getStatusString(dryContact4);
+        message += <span class="hljs-string">&quot;\n&quot;</span> + <span class="hljs-string">&quot;&#x5E72;&#x63A5;&#x70B9;5&#xFF1A;&quot;</span> + getStatusString(dryContact5);
+        message += <span class="hljs-string">&quot;\n&quot;</span> + <span class="hljs-string">&quot;&#x5E72;&#x63A5;&#x70B9;6&#xFF1A;&quot;</span> + getStatusString(dryContact6);
+        message += <span class="hljs-string">&quot;\n&quot;</span> + <span class="hljs-string">&quot;&#x5E72;&#x63A5;&#x70B9;7&#xFF1A;&quot;</span> + getStatusString(dryContact7);
+        message += <span class="hljs-string">&quot;\n&quot;</span> + <span class="hljs-string">&quot;&#x5E72;&#x63A5;&#x70B9;8&#xFF1A;&quot;</span> + getStatusString(dryContact8);
+        tv_mes.setText(message);
+<span class="hljs-comment">//        showToast(message);</span>
+        HDLLog.Log(message);
+    }
+</code></pre>
 
                                 
                                 </section>
@@ -738,7 +789,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MCU通信","level":"1.5.1","depth":2,"next":{"title":"非搜索设备解决方案","level":"1.6","depth":1,"path":"src/api_build_device.md","ref":"./src/api_build_device.md","articles":[{"title":"生成目标设备数据","level":"1.6.1","depth":2,"path":"src/api_build_device_about.md","ref":"./src/api_build_device_about.md","articles":[]}]},"previous":{"title":"MCU功能接口","level":"1.5","depth":1,"path":"src/api_mcu_about.md","ref":"./src/api_mcu_about.md","articles":[{"title":"MCU通信","level":"1.5.1","depth":2,"path":"src/api_mcu.md","ref":"./src/api_mcu.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/api_mcu.md","mtime":"2019-08-15T08:16:06.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-21T07:35:29.650Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MCU通信","level":"1.5.1","depth":2,"next":{"title":"非搜索设备解决方案","level":"1.6","depth":1,"path":"src/api_build_device.md","ref":"./src/api_build_device.md","articles":[{"title":"生成目标设备数据","level":"1.6.1","depth":2,"path":"src/api_build_device_about.md","ref":"./src/api_build_device_about.md","articles":[]}]},"previous":{"title":"MCU功能接口","level":"1.5","depth":1,"path":"src/api_mcu_about.md","ref":"./src/api_mcu_about.md","articles":[{"title":"MCU通信","level":"1.5.1","depth":2,"path":"src/api_mcu.md","ref":"./src/api_mcu.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/api_mcu.md","mtime":"2020-12-30T09:14:57.249Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-31T03:06:01.208Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
